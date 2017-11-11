@@ -1,7 +1,5 @@
-// Spec: https://dxr.mozilla.org/mozilla-central/rev/2535bad09d720e71a982f3f70dd6925f66ab8ec7/toolkit/components/lz4/lz4.js#54
-
-var Buffer = require('buffer').Buffer;
-var LZ4    = require('lz4');
+const Buffer = require('buffer').Buffer;
+const LZ4    = require('lz4');
 
 const MAGIC_NUMBER = new Uint8Array(
   'mozLz40'.split('')
