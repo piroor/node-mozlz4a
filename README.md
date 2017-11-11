@@ -2,6 +2,8 @@
 
 Library to operate Mozilla Firefox's compressed files (jsonlz4 etc.)
 
+Spec of the format is described at [Firefox's source code](https://dxr.mozilla.org/mozilla-central/rev/2535bad09d720e71a982f3f70dd6925f66ab8ec7/toolkit/components/lz4/lz4.js#54)
+
 ## Usage
 
 ```javascript
