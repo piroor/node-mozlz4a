@@ -6,6 +6,17 @@ Spec of the format is described at [Firefox's source code](https://dxr.mozilla.o
 
 ## Usage
 
+### Via command line
+
+This package provides two utility commands `mozlz4a-decompress` and `mozlz4a-compress` to compress/decompress files.
+
+```bash
+$ mozlz4a-decompress ./sessionstore.jsonlz4 > ./sessionstore.json
+$ mozlz4a-compress ./sessionstore.json > ./sessionstore.jsonlz4
+```
+
+### As a library
+
 ```javascript
 var mozlz4a = require('mozlz4a');
 
