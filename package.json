@@ -1,7 +1,7 @@
 {
   "name": "mozlz4a",
   "description": "Library to operate Mozilla Firefox's compressed files (jsonlz4 etc.)",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "YUKI \"Piro\" Hiroshi <piro.outsider.reflex@gmail.com>",
   "repository": {
     "type": "git",
