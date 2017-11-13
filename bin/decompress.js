@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs     = require('fs');
 const Buffer = require('buffer').Buffer;
 const mozlz4a = require('mozlz4a');
