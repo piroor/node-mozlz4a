@@ -9,6 +9,10 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "bin": {
+    "mozlz4a-compress": "./bin/compress.js",
+    "mozlz4a-decompress": "./bin/decompress.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
