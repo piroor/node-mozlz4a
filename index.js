@@ -1,5 +1,5 @@
 const Buffer = require('buffer').Buffer;
-const LZ4    = require('lz4');
+const LZ4    = require('lz4js');
 
 const MAGIC_NUMBER = new Uint8Array(
   'mozLz40'.split('')
@@ -20,15 +20,15 @@ exports.decompress = function(compressed) {
 
   compressed = compressed.slice(MAGIC_NUMBER.byteLength + SIZE_HEADER_BYTES, compressed.length);
   var decompressed = Buffer.alloc(decompressedBufferSize);
-  var decompressedSize = LZ4.decodeBlock(compressed, decompressed);
+  var decompressedSize = LZ4.decompressBlock(compressed, decompressed, 0, compressed.length, 0);
 
   return decompressed.slice(0, decompressedSize);
 };
 
 exports.compress = function(content) {
   content = Buffer.from(content);
-  var compressed     = new Buffer(LZ4.encodeBound(content.length));
-  var compressedSize = LZ4.encodeBlock(content, compressed);
+  var compressed     = new Buffer(LZ4.compressBound(content.length));
+  var compressedSize = LZ4.compressBlock(content, compressed, 0, content.length, new Uint32Array(1 << 16));
   compressed = compressed.slice(0, compressedSize);
 
   var magicNumber = Buffer.from(MAGIC_NUMBER);
